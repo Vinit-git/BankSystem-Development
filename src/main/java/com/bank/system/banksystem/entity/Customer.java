@@ -39,9 +39,13 @@ public class Customer {
     @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
 
+    @Column(name = "is_deleted")
+    private boolean isDeleted;
+
     @PrePersist
     protected void onCreate() {
         createdAt = LocalDateTime.now();
+        isDeleted = false;
     }
 
     public Long getId() {
@@ -106,5 +110,13 @@ public class Customer {
 
     public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public boolean isDeleted() {
+        return isDeleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
     }
 }
