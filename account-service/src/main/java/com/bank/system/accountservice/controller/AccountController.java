@@ -1,8 +1,8 @@
-package com.bank.system.acountservice.controller;
+package com.bank.system.accountservice.controller;
 
-import com.bank.system.acountservice.dto.AccountCreateRequest;
-import com.bank.system.acountservice.dto.AccountResponse;
-import com.bank.system.acountservice.service.AccountService;
+import com.bank.system.accountservice.dto.AccountCreateRequest;
+import com.bank.system.accountservice.dto.AccountResponse;
+import com.bank.system.accountservice.service.AccountService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;

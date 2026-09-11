@@ -1,7 +1,7 @@
-package com.bank.system.acountservice.mapper;
+package com.bank.system.accountservice.mapper;
 
-import com.bank.system.acountservice.dto.AccountResponse;
-import com.bank.system.acountservice.entity.Account;
+import com.bank.system.accountservice.dto.AccountResponse;
+import com.bank.system.accountservice.entity.Account;
 import org.springframework.stereotype.Component;
 
 @Component

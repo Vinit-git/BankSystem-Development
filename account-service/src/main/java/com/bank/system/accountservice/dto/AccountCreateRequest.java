@@ -1,6 +1,6 @@
-package com.bank.system.acountservice.dto;
+package com.bank.system.accountservice.dto;
 
-import com.bank.system.acountservice.entity.AccountType;
+import com.bank.system.accountservice.entity.AccountType;
 
 public class AccountCreateRequest {
     private Long customerId;

@@ -1,7 +1,6 @@
-package com.bank.system.acountservice.repository;
+package com.bank.system.accountservice.repository;
 
-import com.bank.system.acountservice.dto.AccountResponse;
-import com.bank.system.acountservice.entity.Account;
+import com.bank.system.accountservice.entity.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

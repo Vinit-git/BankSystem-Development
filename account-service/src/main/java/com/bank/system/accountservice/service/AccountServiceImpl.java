@@ -1,11 +1,11 @@
-package com.bank.system.acountservice.service;
+package com.bank.system.accountservice.service;
 
-import com.bank.system.acountservice.dto.AccountCreateRequest;
-import com.bank.system.acountservice.dto.AccountResponse;
-import com.bank.system.acountservice.entity.Account;
-import com.bank.system.acountservice.entity.AccountStatus;
-import com.bank.system.acountservice.mapper.AccountMapper;
-import com.bank.system.acountservice.repository.AccountRepository;
+import com.bank.system.accountservice.dto.AccountCreateRequest;
+import com.bank.system.accountservice.dto.AccountResponse;
+import com.bank.system.accountservice.entity.Account;
+import com.bank.system.accountservice.entity.AccountStatus;
+import com.bank.system.accountservice.mapper.AccountMapper;
+import com.bank.system.accountservice.repository.AccountRepository;
 import org.springframework.stereotype.Service;
 
 import java.security.SecureRandom;
