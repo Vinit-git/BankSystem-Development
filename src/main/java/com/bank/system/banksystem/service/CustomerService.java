@@ -1,35 +1,21 @@
 package com.bank.system.banksystem.service;
 
+import com.bank.system.banksystem.dto.CustomerCreateRequest;
+import com.bank.system.banksystem.dto.CustomerResponse;
+import com.bank.system.banksystem.dto.CustomerUpdateRequest;
 import com.bank.system.banksystem.entity.Customer;
-import com.bank.system.banksystem.repository.CustomerRepository;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class CustomerService {
-    private final CustomerRepository customerRepository;
+public interface CustomerService {
 
-    public Customer createCustomer(Customer customer) {
-        return customerRepository.save(customer);
-    }
+    CustomerResponse createCustomer(CustomerCreateRequest request);
 
-    public void deleteCustomer(Long id) {
-        Customer customer =  customerRepository.getReferenceById(id);
-        customer.setDeleted(true);
-        customerRepository.save(customer);
-    }
+    List<Customer> getAllCustomers();
 
-    public List<Customer> getAllCustomers() {
-        return customerRepository.findAll();
-    }
+    CustomerResponse updateCustomer(Long id, CustomerUpdateRequest request);
 
-    public List<Customer> getAllDeletedCustomers() {
-        return customerRepository.findAllDeletedCustomers();
-    }
+    void deleteCustomer(Long id);
 
-    public CustomerService(CustomerRepository customerRepository) {
-        this.customerRepository = customerRepository;
-    }
-
+    List<CustomerResponse> getAllDeletedCustomers();
 }
