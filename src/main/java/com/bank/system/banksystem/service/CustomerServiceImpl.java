@@ -4,6 +4,7 @@ import com.bank.system.banksystem.dto.CustomerCreateRequest;
 import com.bank.system.banksystem.dto.CustomerResponse;
 import com.bank.system.banksystem.dto.CustomerUpdateRequest;
 import com.bank.system.banksystem.entity.Customer;
+import com.bank.system.banksystem.exception.CustomerNotFoundException;
 import com.bank.system.banksystem.mapper.CustomerMapper;
 import com.bank.system.banksystem.repository.CustomerRepository;
 import org.springframework.stereotype.Service;
@@ -36,7 +37,7 @@ public class CustomerServiceImpl implements CustomerService {
     public CustomerResponse updateCustomer(Long id, CustomerUpdateRequest updateCustomer) {
 
         Customer existingCustomer = customerRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Customer not found"));
+                .orElseThrow(() -> new CustomerNotFoundException("Customer not found with id: " + id));
 
         existingCustomer.setFirstName(updateCustomer.getFirstName());
         existingCustomer.setLastName(updateCustomer.getLastName());
@@ -47,8 +48,8 @@ public class CustomerServiceImpl implements CustomerService {
         return customerMapper.mapToResponse(updatedCustomer);
     }
 
-    public List<Customer> getAllCustomers() {
-        return customerRepository.findAll();
+    public List<CustomerResponse> getAllCustomers() {
+        return  customerMapper.mapToResponseList(customerRepository.findAll());
     }
 
     public List<CustomerResponse> getAllDeletedCustomers() {

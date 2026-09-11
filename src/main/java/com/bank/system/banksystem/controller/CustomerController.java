@@ -3,7 +3,6 @@ package com.bank.system.banksystem.controller;
 import com.bank.system.banksystem.dto.CustomerCreateRequest;
 import com.bank.system.banksystem.dto.CustomerResponse;
 import com.bank.system.banksystem.dto.CustomerUpdateRequest;
-import com.bank.system.banksystem.entity.Customer;
 import com.bank.system.banksystem.service.CustomerService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -41,8 +40,8 @@ public class CustomerController {
     }
 
     @GetMapping("/getAllCustomers")
-    public List<Customer> getAllCustomers() {
-        return customerService.getAllCustomers();
+    public ResponseEntity<List<CustomerResponse>> getAllCustomers() {
+        return ResponseEntity.ok( customerService.getAllCustomers());
     }
 
     @GetMapping("/getAllDeletedCustomers")
